@@ -289,6 +289,35 @@ main{padding-bottom:90px}
   }
 }
 </style>
+<style>
+/* Academy visual references and accessible image viewer */
+.academy-visual-gallery{margin:18px 0 22px;padding:14px;border:1px solid var(--bd);border-radius:14px;background:var(--cr)}
+.academy-visual-gallery>h3{font-size:.95rem;margin:0 0 10px;color:var(--tx)}
+.academy-visual-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px}
+.academy-visual-card{min-width:0;margin:0;border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:var(--bs)}
+.academy-visual-open{display:block;position:relative;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in;color:inherit;text-align:inherit}
+.academy-visual-open img{display:block;width:100%;height:158px;object-fit:contain;background:#fff}
+.academy-visual-open:focus-visible,.academy-image-close:focus-visible,.academy-image-source:focus-visible{outline:3px solid var(--pr);outline-offset:3px}
+.academy-visual-hint{display:block;padding:5px 9px;color:var(--mt);font-size:.72rem;text-align:center}
+.academy-visual-fallback{display:none;min-height:130px;padding:18px;align-items:center;justify-content:center;text-align:center;color:var(--mt);font-size:.82rem}
+.academy-visual-card.is-missing .academy-visual-fallback{display:flex}
+.academy-visual-card.is-missing .academy-visual-hint{display:none}
+.academy-visual-caption{padding:8px 10px 10px;font-size:.78rem;line-height:1.7;color:var(--tx)}
+.academy-visual-credit{display:block;margin-top:3px;color:var(--mt);font-size:.7rem}
+.academy-visual-credit a{color:var(--pr);text-decoration:underline}
+#academy-image-viewer[hidden]{display:none!important}
+#academy-image-viewer{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(3,8,20,.88)}
+.academy-image-dialog{position:relative;width:min(100%,1050px);max-height:94vh;overflow:auto;border:1px solid rgba(255,255,255,.2);border-radius:16px;background:var(--cr);padding:14px;box-shadow:0 20px 70px rgba(0,0,0,.4)}
+.academy-image-close{position:sticky;top:0;z-index:2;float:left;width:42px;height:42px;border:0;border-radius:50%;background:var(--cd);color:var(--tx);font-size:1.6rem;line-height:1;cursor:pointer}
+.academy-image-dialog img{display:block;clear:both;max-width:100%;max-height:72vh;width:auto;height:auto;margin:8px auto;object-fit:contain}
+.academy-image-dialog figcaption{clear:both;padding:8px 4px 2px;color:var(--tx);font-size:.86rem}
+.academy-image-dialog .academy-image-source{color:var(--pr);text-decoration:underline}
+.academy-image-modal-fallback{display:none;min-height:180px;align-items:center;justify-content:center;text-align:center;padding:24px;color:var(--mt)}
+.academy-image-dialog.is-missing .academy-image-modal-fallback{display:flex}
+.academy-image-dialog.is-missing img{display:none}
+@media(max-width:520px){.academy-visual-gallery{padding:10px}.academy-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.academy-visual-open img{height:120px}.academy-visual-caption{font-size:.72rem;padding:7px}.academy-image-dialog{padding:10px}}
+
+</style>
 </head>
 <body><a class="skip" href="#academy-content">پرش به محتوا</a><h1 class="vh">آکادمی جامع شبکه، CCTV و طراحی زیرساخت</h1>
 
@@ -10910,32 +10939,6 @@ NIST: NIST مجموعه‌ای از چارچوب‌ها و راهنماهای ا
 <div class="why up-more"><span class="lbl">تکمیلی — روش کار حرفه‌ای</span>Pass-Through کانکتور را راحت‌تر وارد می‌کند و سیم از جلو بیرون می‌زند و بریده می‌شود؛ ابزار آن باید مخصوص باشد.</div>
 <div class="why up-more"><span class="lbl">تکمیلی پیشرفته</span>کانکتور و کابل را هم‌رده انتخاب کن (کانکتور Cat6 برای کابل Cat6). برای پین‌شماری، کانکتور را با تماس‌ها رو به خودت و زبانه‌ی پایین نگه دار؛ پین ۱ سمت چپ است. غلاف باید داخل کانکتور بنشیند تا کشش را نگه دارد. در کابل شیلددار، سیم ارت (Drain) باید به بدنه‌ی فلزی کانکتور وصل شود.</div>
 <div class="motion"><span class="lbl">انیمیشن: ترتیب سیم‌ها (T568B)</span><svg viewBox="0 0 340 190" role="img" aria-label="انیمیشن چیدن سیم‌ها به ترتیب T568B و ورود به کانکتور" style="width:100%;max-width:420px;display:block;margin:8px auto"><style>.w{animation:wslide 3.2s ease-in-out infinite alternate}@keyframes wslide{from{transform:translateX(-70px)}to{transform:translateX(0)}}
-/* Academy visual references and accessible image viewer */
-.academy-visual-gallery{margin:18px 0 22px;padding:14px;border:1px solid var(--bd);border-radius:14px;background:var(--cr)}
-.academy-visual-gallery>h3{font-size:.95rem;margin:0 0 10px;color:var(--tx)}
-.academy-visual-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px}
-.academy-visual-card{min-width:0;margin:0;border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:var(--bs)}
-.academy-visual-open{display:block;position:relative;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in;color:inherit;text-align:inherit}
-.academy-visual-open img{display:block;width:100%;height:158px;object-fit:contain;background:#fff}
-.academy-visual-open:focus-visible,.academy-image-close:focus-visible,.academy-image-source:focus-visible{outline:3px solid var(--pr);outline-offset:3px}
-.academy-visual-hint{display:block;padding:5px 9px;color:var(--mt);font-size:.72rem;text-align:center}
-.academy-visual-fallback{display:none;min-height:130px;padding:18px;align-items:center;justify-content:center;text-align:center;color:var(--mt);font-size:.82rem}
-.academy-visual-card.is-missing .academy-visual-fallback{display:flex}
-.academy-visual-card.is-missing .academy-visual-hint{display:none}
-.academy-visual-caption{padding:8px 10px 10px;font-size:.78rem;line-height:1.7;color:var(--tx)}
-.academy-visual-credit{display:block;margin-top:3px;color:var(--mt);font-size:.7rem}
-.academy-visual-credit a{color:var(--pr);text-decoration:underline}
-#academy-image-viewer[hidden]{display:none!important}
-#academy-image-viewer{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(3,8,20,.88)}
-.academy-image-dialog{position:relative;width:min(100%,1050px);max-height:94vh;overflow:auto;border:1px solid rgba(255,255,255,.2);border-radius:16px;background:var(--cr);padding:14px;box-shadow:0 20px 70px rgba(0,0,0,.4)}
-.academy-image-close{position:sticky;top:0;z-index:2;float:left;width:42px;height:42px;border:0;border-radius:50%;background:var(--cd);color:var(--tx);font-size:1.6rem;line-height:1;cursor:pointer}
-.academy-image-dialog img{display:block;clear:both;max-width:100%;max-height:72vh;width:auto;height:auto;margin:8px auto;object-fit:contain}
-.academy-image-dialog figcaption{clear:both;padding:8px 4px 2px;color:var(--tx);font-size:.86rem}
-.academy-image-dialog .academy-image-source{color:var(--pr);text-decoration:underline}
-.academy-image-modal-fallback{display:none;min-height:180px;align-items:center;justify-content:center;text-align:center;padding:24px;color:var(--mt)}
-.academy-image-dialog.is-missing .academy-image-modal-fallback{display:flex}
-.academy-image-dialog.is-missing img{display:none}
-@media(max-width:520px){.academy-visual-gallery{padding:10px}.academy-visual-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.academy-visual-open img{height:120px}.academy-visual-caption{font-size:.72rem;padding:7px}.academy-image-dialog{padding:10px}}
 </style><rect x="226" y="6" width="100" height="178" rx="10" fill="var(--cd)" stroke="var(--bd)"/><text x="276" y="22" text-anchor="middle" font-size="11" fill="var(--mt)">RJ45</text><g class="w" style="animation-delay:0.00s"><rect x="40" y="30" width="186" height="11" rx="5" fill="#f5a35a" stroke="#0004"/><rect x="40" y="33" width="186" height="4" fill="#fff" opacity=".85"/></g><text x="14" y="40" font-size="11" fill="var(--tx)">۱</text><g class="w" style="animation-delay:0.18s"><rect x="40" y="49" width="186" height="11" rx="5" fill="#f08a1c" stroke="#0004"/></g><text x="14" y="59" font-size="11" fill="var(--tx)">۲</text><g class="w" style="animation-delay:0.36s"><rect x="40" y="68" width="186" height="11" rx="5" fill="#8fd18f" stroke="#0004"/><rect x="40" y="71" width="186" height="4" fill="#fff" opacity=".85"/></g><text x="14" y="78" font-size="11" fill="var(--tx)">۳</text><g class="w" style="animation-delay:0.54s"><rect x="40" y="87" width="186" height="11" rx="5" fill="#2f6fe0" stroke="#0004"/></g><text x="14" y="97" font-size="11" fill="var(--tx)">۴</text><g class="w" style="animation-delay:0.72s"><rect x="40" y="106" width="186" height="11" rx="5" fill="#8fb4f0" stroke="#0004"/><rect x="40" y="109" width="186" height="4" fill="#fff" opacity=".85"/></g><text x="14" y="116" font-size="11" fill="var(--tx)">۵</text><g class="w" style="animation-delay:0.90s"><rect x="40" y="125" width="186" height="11" rx="5" fill="#2fa84f" stroke="#0004"/></g><text x="14" y="135" font-size="11" fill="var(--tx)">۶</text><g class="w" style="animation-delay:1.08s"><rect x="40" y="144" width="186" height="11" rx="5" fill="#b98a62" stroke="#0004"/><rect x="40" y="147" width="186" height="4" fill="#fff" opacity=".85"/></g><text x="14" y="154" font-size="11" fill="var(--tx)">۷</text><g class="w" style="animation-delay:1.26s"><rect x="40" y="163" width="186" height="11" rx="5" fill="#7a4a2a" stroke="#0004"/></g><text x="14" y="173" font-size="11" fill="var(--tx)">۸</text></svg><p style="text-align:center;color:var(--mt);font-size:.85rem">پین ۱ تا ۸: سفید‌نارنجی، نارنجی، سفید‌سبز، آبی، سفید‌آبی، سبز، سفید‌قهوه‌ای، قهوه‌ای</p></div>
 <div class="exercise" data-why="سیم‌ها باید تا انتها رفته و ترتیب رنگ درست باشد؛ در غیر این صورت تماس قطع و وصل می‌شود." role="radiogroup" aria-label="۱. پیش از کریمپ کدام مورد را کنترل می‌کنی؟"><div class="q">۱. پیش از کریمپ کدام مورد را کنترل می‌کنی؟</div>
 <button type="button" class="opt" data-ok="1" role="radio" aria-checked="false">سیم‌ها تا انتها رفته و ترتیب رنگ درست است</button>
@@ -14804,7 +14807,7 @@ stpLoop:{file:'STP loop problem.svg',title:'دیاگرام حلقه شبکه و 
 redundancyTopology:{file:'Network Structure.jpg',title:'مقایسه اتصال شبکه با افزونگی و بدون افزونگی',alt:'دیاگرام مقایسه توپولوژی دارای مسیر جایگزین با شبکه فاقد مسیر پشتیبان',author:'Backstrnt',license:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/',source:'https://commons.wikimedia.org/wiki/File:Network_Structure.jpg'},
 packetPath:{file:'Internet packet path.png',title:'مسیر عبور بسته شبکه از فرستنده تا گیرنده',alt:'دیاگرام مسیر عبور بسته داده در شبکه از مبدأ به مقصد',author:'Socratesone',license:'Public domain',licenseUrl:'https://creativecommons.org/publicdomain/zero/1.0/',source:'https://commons.wikimedia.org/wiki/File:Internet_packet_path.png'},
 natConcept:{file:'NAT Concept-en.svg',title:'دیاگرام تبدیل آدرس خصوصی به آدرس عمومی با NAT',alt:'نمای تغییر آدرس مبدأ در روتر NAT هنگام ارتباط یک میزبان شبکه خصوصی با اینترنت',author:'Michel Bakni',license:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/',source:'https://commons.wikimedia.org/wiki/File:NAT_Concept-en.svg'},
-videoBandwidth:{file:'Figure2a.jpg',title:'نمونه ظرفیت شبکه برای چند جریان ویدئویی هم‌زمان',alt:'نمودار ظرفیت لازم برای پخش هم‌زمان دو جریان HDTV و دو جریان SD به‌همراه ترافیک دیگر؛ مثال آموزشی و نه مقدار ثابت برای همه سامانه‌ها',author:'Emre Çınar',license:'CC BY-SA 3.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/3.0/',source:'https://commons.wikimedia.org/wiki/File:Figure2a.jpg'}
+videoBandwidth:{file:'Figure2a.jpg',title:'نمونه ظرفیت شبکه برای چند جریان ویدئویی هم‌زمان',alt:'نمودار ظرفیت لازم برای پخش هم‌زمان دو جریان HDTV و دو جریان SD به‌همراه ترافیک دیگر؛ مثال آموزشی و نه مقدار ثابت برای همه سامانه‌ها',author:'Emre Çınar',license:'CC BY-SA 3.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/3.0/',source:'https://commons.wikimedia.org/wiki/File:Figure2a.jpg'},
 bncConnector:{file:'Conector BNC.jpg',title:'نمای نزدیک کانکتور BNC',alt:'کانکتور BNC مورد استفاده برای اتصال کابل کواکسیال تصویر در سامانه آنالوگ',author:'Mariofergo',license:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/',source:'https://commons.wikimedia.org/wiki/File:Conector_BNC.jpg'},
 fisheye:{file:'Fisheye security camera (cropped).jpg',title:'نمونه واقعی دوربین امنیتی چشم‌ماهی',alt:'دوربین امنیتی با لنز چشم‌ماهی و میدان دید بسیار باز',author:'Myotus',license:'CC BY-SA 4.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/4.0/',source:'https://commons.wikimedia.org/wiki/File:Fisheye_security_camera_(cropped).jpg'},
 varifocal:{file:'Varifocal example.jpg',title:'نمونه تغییر میدان دید لنز وریفوکال CCTV',alt:'مقایسه تصویر لنز CCTV در فاصله کانونی ۲٫۸ میلی‌متر و ۱۲ میلی‌متر و پس از تنظیم فوکوس',author:'Hustvedt',license:'CC BY-SA 3.0',licenseUrl:'https://creativecommons.org/licenses/by-sa/3.0/',source:'https://commons.wikimedia.org/wiki/File:Varifocal_example.jpg'},
