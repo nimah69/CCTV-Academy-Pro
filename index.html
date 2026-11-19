@@ -294,7 +294,7 @@ main{padding-bottom:90px}
 
 <aside class="sidebar">
   <h2>آکادمی جامع شبکه، CCTV و طراحی زیرساخت</h2>
-  <p class="sub">۳۴۵ موضوع · ۸ پیوست</p>
+  <p class="sub" id="academy-count">در حال شمارش موضوع‌ها…</p>
   <nav id="sb-nav">
     
 <span class="grp">فصل ۱ — مبانی شبکه و آدرس‌دهی</span>
@@ -12916,6 +12916,14 @@ Camera B1-B8 → Switch B (PoE) → SFP LX A ↔ Duplex SMF 400m ↔ SFP LX B �
 // ═══ ناوبری ═══
 var navLinks = document.querySelectorAll('#sb-nav a');
 var topics = document.querySelectorAll('.topic');
+var skipLink = document.querySelector('.skip');
+var mainContent = document.getElementById('academy-content');
+if(skipLink && mainContent){
+  skipLink.addEventListener('click', function(e){
+    e.preventDefault();
+    mainContent.focus();
+  });
+}
 function showTopic(id){
   topics.forEach(function(t){ t.classList.toggle('active', t.id===id); });
   navLinks.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href')==='#'+id); });
@@ -14432,6 +14440,10 @@ paint();if(location.hash&&location.hash!=='#home')mark();
 (function(){
 var nav=document.getElementById('sb-nav');if(!nav)return;
 var fa=function(x){return String(x).replace(/\d/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'[d]})};
+var topicTotal=nav.querySelectorAll('a[href^="#t"]').length;
+var appendixTotal=nav.querySelectorAll('a[href^="#ap"]').length;
+var countLabel=document.getElementById('academy-count');
+if(countLabel)countLabel.textContent=fa(topicTotal)+' موضوع · '+fa(appendixTotal)+' پیوست';
 var groups=[],cur=null;
 [].slice.call(nav.children).forEach(function(el){
  if(el.classList.contains('grp')){cur={h:el,l:[]};groups.push(cur);el.setAttribute('role','button');el.tabIndex=0;var c=document.createElement('span');c.className='gc';el.appendChild(c);cur.c=c}
