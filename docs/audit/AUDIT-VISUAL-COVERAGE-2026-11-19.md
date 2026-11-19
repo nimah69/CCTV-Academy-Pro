@@ -1056,3 +1056,94 @@
 - فایل جدیدی اضافه نشد.
 - تغییرات در شاخه مستقل `fix/t109-image-section-and-clean-image-urls-2026-11-19` ثبت شدند.
 - ادغام در `main` انجام نشده است.
+
+
+---
+
+## 26. تکمیل بررسی صفحه‌های منبع تصاویر — ۱۹ نوامبر ۲۰۲۶
+
+### 26.1 دامنه و شمارش
+
+- ۳۸ صفحه اختصاصی دیگر در Wikimedia Commons برای تصاویر شماره ۱ تا ۳، ۱۰ و ۱۳ تا ۴۶ باز و بخش مجوز آن‌ها بررسی شد.
+- هفت صفحه قبلی (تصاویر شماره ۴ تا ۹ و ۱۱) نیز در مرحله قبل بررسی شده بودند.
+- در مجموع ۴۵ صفحه از ۴۶ منبع تصویر، اطلاعات مجوز و پدیدآورنده قابل بررسی داشتند.
+- صفحه اختصاصی `Aggi_6.png` (تصویر شماره ۱۲) در دسترس ابزار مرور قرار نگرفت. جست‌وجوی دسته‌بندی Commons وجود فایل و ابعاد ۱۵۳۶×۲۰۴۸ را نشان داد، اما مجوز و پدیدآورنده آن از صفحه اختصاصی تأیید نشد. این منبع همچنان باز است.
+
+### 26.2 نتیجه مجوز ۳۸ صفحه بررسی‌شده در این مرحله
+
+| شماره تصویر | فایل | مجوز/وضعیت صفحه اختصاصی |
+|---:|---|---|
+| 1 | `RJ45.jpg` | CC0 1.0 |
+| 2 | `LAN_switch_-_back,_5_ports_(port_1_as_uplink).jpg` | CC BY-SA 2.5 |
+| 3 | `Power_over_Ethernet_injector.jpg` | CC BY-SA 4.0 |
+| 10 | `Bullet_camera_and_Vandal_Dome_camera.jpg` | CC BY-SA 4.0 |
+| 13 | `Camara_PTZ.jpg` | CC BY-SA 4.0 |
+| 14 | `Fisheye_security_camera.jpg` | CC BY-SA 4.0 |
+| 15 | `Thermal_camera.jpg` | CC BY-SA 3.0؛ همچنین CC BY-SA 2.0 و GFDL |
+| 16 | `Automated_License_Plate_Reader_Camera_-_New_Orleans_March_2020.jpg` | CC BY 2.0 |
+| 17 | `Network_Patch_Panel_Clean_Back.jpg` | CC BY-SA 3.0 |
+| 18 | `Networking_Rack.jpg` | CC BY-SA 4.0 |
+| 19 | `APC_10-outlet_rackmount_19-inch_PDU.jpg` | CC BY-SA 3.0؛ همچنین GFDL |
+| 20 | `Yellow_Network_Cables_Patchpanel_rear.jpg` | CC BY 4.0 |
+| 21 | `Raid_array.jpg` | CC BY-SA 3.0؛ نسخه‌های قدیمی‌تر نیز در صفحه ذکر شده‌اند |
+| 22 | `NAS_server.png` | CC BY-SA 3.0 |
+| 23 | `HP_P6300.jpg` | CC BY-SA 3.0 |
+| 24 | `HDD_Internal.jpg` | CC0 1.0 |
+| 25 | `Uninterruptible_power_supply.jpg` | CC BY-SA 4.0 |
+| 26 | `Network_Time_Protocol_servers_and_clients.svg` | Public Domain |
+| 27 | `LiveView_Technologies_vandalized_equipment.jpg` | CC BY-SA 4.0 |
+| 28 | `BioAffix_Cardreader_Wall.png` | CC BY 4.0 |
+| 29 | `Standard_Fingerprint_reader_controller.jpg` | CC BY-SA 4.0 |
+| 30 | `Turnstile_and_MagLock_Gate.jpg` | CC BY-SA 3.0؛ همچنین CC BY-SA 2.5، 2.0، 1.0 و GFDL |
+| 31 | `CRAC_Cabinet_1.jpg` | CC BY-SA 3.0 |
+| 32 | `Argonite_automatic_fire_suppression_system_server_room.jpg` | CC BY-SA 3.0 |
+| 33 | `Power_generator_of_a_hospital_data_center.jpg` | CC0 1.0 |
+| 34 | `CCTV_dome_camera.jpg` | CC BY-SA 1.0؛ همچنین CC BY-SA 4.0 و نسخه‌های دیگر |
+| 35 | `Tools_for_electric_works.JPG` | CC BY-SA 3.0 و GFDL |
+| 36 | `Cable_stripper,_cable_tester_(RJ45,_RJ11),_LSA-Tool_and_crimping_tool.jpg` | CC BY 4.0 |
+| 37 | `Onp_switch.jpg` | CC BY-SA 4.0 |
+| 38 | `Cross_section_of_a_shielded_Cat6_patch_cable.jpg` | CC BY-SA 4.0 |
+| 39 | `PIR_Motion_Detector.jpg` | CC BY-SA 2.0 |
+| 40 | `Door_siren.jpg` | CC BY-SA 4.0 |
+| 41 | `Installing_a_Magnetic_Door_Contact.JPG` | CC BY-SA 3.0 |
+| 42 | `RJ-45_TIA-568B_Right.png` | Public Domain |
+| 43 | `Digital_Multimeter_(To_measure_Voltage,_Current_and_Resistance).jpg` | CC0 1.0 |
+| 44 | `Network_Cable_Tester_(1).jpg` | CC BY-SA 4.0 |
+| 45 | `Optic_fibre_splicer.jpg` | CC BY-SA 4.0 |
+| 46 | `Solar_Powered_4G_PTZ_CCTV_Camera_Installation_Chennai.jpg` | CC BY 4.0 |
+
+### 26.3 مغایرت مهم شناسایی و اصلاح‌شده در تصویر ۴۲
+
+- کپشن قبلی، پدیدآورنده را `Miha Ulanov` و مجوز را `CC0 1.0` اعلام می‌کرد.
+- صفحه اختصاصی فایل، پدیدآورنده را `Lp` در ویکی‌پدیای ایتالیایی و وضعیت را Public Domain اعلام می‌کند.
+- فایل اصلی Commons با نام `RJ-45_TIA-568B_Right.png` و ابعاد ۴۴۰×۲۲۰ پیکسل است.
+- نشانی مستقیم قبلی سند به مسیر و پسوند دیگری (`.svg`) اشاره می‌کرد و با فایل اصلی صفحه منبع تطبیق نداشت.
+- نشانی مستقیم تصویر به فایل PNG واقعی تغییر کرد؛ پیوند صفحه منبع حفظ شد.
+- کپشن با نام پدیدآورنده، وضعیت Public Domain و وضوح واقعی اصلاح شد.
+- این اصلاح در `index.html` شاخه ممیزی ثبت شد؛ تعداد تگ‌های تصویر تغییر نکرد.
+
+### 26.4 محدودیت کیفیت و تناسب آموزشی
+
+موارد زیر برای مرحله ارزیابی بصری علامت‌گذاری شدند:
+
+- تصویر NAS: فقط ۵۴۳×۶۲۶ پیکسل؛ برای جزئیات پنل و درگاه‌ها ضعیف است.
+- تصویر سوئیچ رک‌مونت `Onp_switch.jpg`: ۱۲۰۰×۵۴۶ پیکسل؛ جزئیات ریز پورت‌ها محدود است.
+- دیاگرام T568B: ۴۴۰×۲۲۰ پیکسل؛ برای نمایش رنگ و ترتیب رشته‌ها در نمایشگر کوچک محدود است.
+- آژیر `Door_siren.jpg`: ۷۲۰×۷۲۰ پیکسل؛ قابل شناسایی است، اما جزئیات مدل و اتصالات را نشان نمی‌دهد.
+- تصویرهای دارای مجوز معتبر لزوماً از نظر آموزشی کافی نیستند؛ مجوز و تناسب آموزشی دو معیار مستقل‌اند.
+
+### 26.5 وضعیت انتساب و حقوق استفاده
+
+- مجوزهای CC BY و CC BY-SA نیازمند انتساب مناسب، پیوند مجوز و اعلام تغییرات احتمالی‌اند.
+- برای CC BY-SA، در صورت اقتباس یا تغییر اثر، شرط ShareAlike نیز باید رعایت شود.
+- فایل `Active-Infrared-Night-Vision.jpg` همچنان استثناست: اجازه بازنشر با انتساب دارد، اما مجوز Creative Commons نیست.
+- `Aggi_6.png` تا زمان بازیابی صفحه اختصاصی و تأیید مجوز، نباید منبع مجاز و تأییدشده معرفی شود.
+
+### 26.6 آزمون‌ها و وضعیت کار
+
+- صفحه منبع و بخش مجوز ۳۸ فایل این مرحله بررسی شد؛ هفت منبع مرحله قبلی نیز در شمار کل لحاظ شد.
+- نشانی مستقیم تصویر T568B با پیوند مستقیم فایل واقعی صفحه Commons جایگزین شد.
+- کپشن اشتباه پدیدآورنده و مجوز T568B اصلاح شد.
+- آزمون ساختاری ۴۶ تصویر، ۴۶ نشانی یکتا، صفر پارامتر رهگیری، صفر تصویر جداافتاده و توازن تگ‌های `section` باید پس از این commit دوباره اجرا شود.
+- آزمون مرورگر و بارگذاری زنده همه تصاویر هنوز اجرا نشده است.
+- فقط دو فایل موجود پروژه تغییر کرده‌اند؛ فایل جدیدی ایجاد نشده است.
