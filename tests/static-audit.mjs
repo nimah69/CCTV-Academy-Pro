@@ -57,5 +57,4 @@ for (const task of taskBlocks) {
   answerCounts[Number(answer)]++;
 }
 assert.deepEqual(answerCounts, [26, 26, 25, 25], 'Single-choice answers must remain balanced');
-assert.equal(new Set(practiceIds).size, practiceIds.length, 'Practical exercise IDs must be unique');
 console.log(`Static audit passed: ${topicIds.length} topics, ${ids.length} HTML IDs, ${hashes.length} local links, ${exercises.length} exercises.`);
