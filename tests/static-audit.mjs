@@ -43,6 +43,18 @@ assert.ok(html.includes('id="t364"'), 'Practical chapter 24 must exist');
 assert.ok(html.includes('id="practice-list"'), 'Practical quiz container must exist');
 assert.ok(html.includes('cctvAcademyPractice.v1'), 'Separate practice progress key must exist');
 const practiceIds = [...html.matchAll(/id:'(p364-[a-z0-9-]+)'/g)].map(m => m[1]);
-assert.equal(practiceIds.length, 89, 'Expected 89 practical exercises across the first 280 topics');
+assert.equal(practiceIds.length, 110, 'Expected 110 practical exercises across the first 350 topics');
 assert.equal(new Set(practiceIds).size, practiceIds.length, 'Practical exercise IDs must be unique');
+
+// Check balanced answer positions for all single-choice practical exercises.
+const practiceArray = html.match(/var KEY='cctvAcademyPractice\.v1',tasks=\[([\s\S]*?)\n\];/)?.[1] ?? '';
+const taskBlocks = [...practiceArray.matchAll(/\{id:'p364-[^']+'[\s\S]*?(?=\n\{id:'p364-|\s*$)/g)].map(m => m[0]);
+const answerCounts = [0, 0, 0, 0];
+for (const task of taskBlocks) {
+  if (!/type:'single'/.test(task)) continue;
+  const answer = task.match(/answer:(\d+)/)?.[1];
+  assert.ok(answer !== undefined, 'Single-choice task must have a numeric answer');
+  answerCounts[Number(answer)]++;
+}
+assert.deepEqual(answerCounts, [26, 26, 25, 25], 'Single-choice answers must remain balanced');
 console.log(`Static audit passed: ${topicIds.length} topics, ${ids.length} HTML IDs, ${hashes.length} local links, ${exercises.length} exercises.`);
