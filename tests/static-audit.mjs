@@ -7,7 +7,7 @@ const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 const topicIds = [...html.matchAll(/<section\b[^>]*\bclass=["']topic["'][^>]*\bid=["']([^"']+)["'][^>]*>/gi)].map(m => m[1]);
 const navMarkup = html.match(/<nav\b[^>]*\bid=["']sb-nav["'][^>]*>([\s\S]*?)<\/nav>/i)?.[1] ?? '';
 const navTopicIds = [...navMarkup.matchAll(/<a\b[^>]*\bhref=["']#(t\d+)["'][^>]*>/gi)].map(m => m[1]);
-assert.equal(topicIds.length, 363, 'Expected 363 topic sections');
+assert.equal(topicIds.length, 364, 'Expected 364 topic sections including practical chapter 24');
 assert.equal(navTopicIds.length, topicIds.length, 'Every topic must have one sidebar entry');
 assert.deepEqual([...navTopicIds].sort(), [...topicIds].sort(), 'Sidebar and topic IDs must match');
 
@@ -39,4 +39,7 @@ for (let i = 0; i < exercises.length; i++) {
 
 assert.match(html, /id=["']academy-count["']/);
 assert.match(html, /topicTotal=nav\.querySelectorAll\('a\[href\^="#t"\]'\)\.length/);
+assert.ok(html.includes('id="t364"'), 'Practical chapter 24 must exist');
+assert.ok(html.includes('id="practice-list"'), 'Practical quiz container must exist');
+assert.ok(html.includes('cctvAcademyPractice.v1'), 'Separate practice progress key must exist');
 console.log(`Static audit passed: ${topicIds.length} topics, ${ids.length} HTML IDs, ${hashes.length} local links, ${exercises.length} exercises.`);
