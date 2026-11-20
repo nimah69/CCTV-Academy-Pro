@@ -83,7 +83,10 @@ tr:last-child td{border-bottom:none}
 @keyframes af232{to{opacity:1;transform:none}}
 @keyframes af259{to{opacity:1;transform:none}}
 @keyframes af267{to{opacity:1;transform:none}}
-.xref{font-size:.82rem;margin:14px 0 0}.xref a{color:var(--pr);text-decoration:none}</style>
+.xref{font-size:.82rem;margin:14px 0 0}.xref a{color:var(--pr);text-decoration:none}
+/* فصل ۲۴ — تمرین‌های عملی */
+#t364 .practice-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:15px 0}#t364 .practice-overview>div{background:var(--cr);border:1px solid var(--bs);border-radius:12px;padding:10px;text-align:center}#t364 .practice-overview b{display:block;font-size:1.3rem;color:var(--ac)}#t364 .practice-overview span{font-size:.75rem;color:var(--mt)}#t364 .practice-progress{height:8px;background:var(--cd);border-radius:9px;overflow:hidden}#t364 .practice-progress i{display:block;width:0;height:100%;background:var(--ok)}#t364 .practice-note{background:var(--cr);border-inline-start:3px solid var(--ac);padding:11px;border-radius:8px;font-size:.84rem;line-height:1.8;margin:14px 0}#t364 .practice-list{display:grid;gap:13px}#t364 .practice-card{background:var(--cr);border:1px solid var(--bs);border-radius:13px;padding:14px}#t364 .practice-card h3{font-size:1rem;margin:0 0 8px}#t364 .practice-meta{font-size:.75rem;color:var(--mt);margin-bottom:10px}#t364 .practice-question{font-weight:700;line-height:1.9;margin:9px 0}#t364 .practice-options{display:grid;gap:7px}#t364 .practice-option,#t364 .practice-actions button{width:100%;text-align:start;border:1px solid var(--bs);background:var(--bg);color:var(--tx);padding:10px;border-radius:9px;line-height:1.7;cursor:pointer}#t364 .practice-option.selected{border-color:var(--ac);background:var(--cd)}#t364 .practice-option.correct{border-color:var(--ok);background:rgba(5,150,105,.12)}#t364 .practice-option.incorrect{border-color:var(--er);background:rgba(220,38,38,.1)}#t364 .practice-actions{display:flex;gap:8px;margin-top:10px}#t364 .practice-actions .practice-check{background:var(--ac);color:white;text-align:center}#t364 .practice-input{max-width:220px;padding:10px;border:1px solid var(--bs);border-radius:8px;background:var(--bg);color:var(--tx);font:inherit}#t364 .practice-feedback{display:none;margin-top:10px;padding:11px;border-radius:8px;font-size:.85rem;line-height:1.9}#t364 .practice-feedback.show{display:block}#t364 .practice-feedback.ok{border:1px solid var(--ok);background:rgba(5,150,105,.1)}#t364 .practice-feedback.no{border:1px solid var(--er);background:rgba(220,38,38,.08)}#t364 .practice-safety{margin-top:7px;color:var(--wr)}@media(max-width:480px){#t364 .practice-card{padding:11px}#t364 .practice-overview{gap:4px}}
+</style>
 <meta name="description" content="آکادمی جامع شبکه، CCTV و طراحی زیرساخت: ۳۶۳ موضوع و ۸ پیوست با تمرین و آزمایشگاه"><meta name="theme-color" content="#4f6ef7">
 <style id="up1">
 :root[data-theme=dark]{--bg:#0f172a;--cr:#1e293b;--cd:#273449;--tx:#e5e7eb;--mt:#9aa7bb;--bd:#334155;--bs:#334155}
@@ -704,6 +707,8 @@ main{padding-bottom:90px}
 <a href="#t361">361. عیب‌یابی لایه‌ای از برق تا تصویر راه دور</a>
 <a href="#t362">362. امنیت حساب، مالکیت دستگاه و حریم خصوصی</a>
 <a href="#t363">363. نگهداری دوره‌ای و طراحی پروژه یکپارچه</a>
+<span class="grp">فصل ۲۴ — آزمون‌های عملی و سناریوهای مهارتی</span>
+<a href="#t364">تمرین‌های عملی · بستهٔ نمونه</a>
 <span class="grp">پیوست‌های تکمیلی</span>
 <a href="#apA">الف. واژه‌نامه</a>
 <a href="#apB">ب. جدول پورت‌ها</a>
@@ -11940,6 +11945,15 @@ NIST: NIST مجموعه‌ای از چارچوب‌ها و راهنماهای ا
   <div class="example"><span class="lbl">کارگاه عملی</span>برای یک باغ با دو دوربین، روتر 4G، ضبط محلی و برق خورشیدی یک طرح کامل بنویس: دیاگرام، BoQ، محاسبات داده و انرژی، ماتریس ریسک، معیار پذیرش، برنامهٔ نگهداری و هزینهٔ جاری. حداقل یک روز بدون آفتاب، قطع WAN، اتمام بسته، خرابی روتر و انتقال مالکیت را در ریسک‌ها بیاور.</div>
   <div class="why up-more"><span class="lbl">ارتباط با فصل‌های دیگر</span>پایش ← <a href="#t187">Health Monitoring</a> · Firmware ← <a href="#t252">Firmware Update</a> و <a href="#t254">Patch Management</a> · چک‌لیست ← <a href="#t307">چک‌لیست تکنسین</a></div>
 </section>
+<section class="topic" id="t364">
+<span class="tnum">فصل ۲۴ · آزمایشگاه مهارت‌های عملی · نسخهٔ نمونه</span>
+<h2>آزمون‌های عملی و سناریوهای مهارتی</h2>
+<div class="info"><strong>روش کار:</strong> هر تمرین یک موقعیت اجرایی را شبیه‌سازی می‌کند. پاسخ را انتخاب کن یا مراحل را مرتب کن؛ سپس بازخورد و دلیل فنی را بخوان. این فصل به اینترنت وابسته نیست.</div>
+<div class="practice-overview"><div><b id="practice-done">۰</b><span>پاسخ‌داده‌شده</span></div><div><b id="practice-total">۵</b><span>تمرین نمونه</span></div><div><b id="practice-score">۰٪</b><span>درصد پاسخ درست</span></div></div>
+<div class="practice-progress"><i id="practice-progress-bar"></i></div>
+<div class="practice-note"><b>دامنهٔ این نسخه:</b> پنج نمونه برای تثبیت قالب‌های آموزشی؛ پیاده‌سازی کامل ممیزی ۷۰ موضوع نخست هنوز انجام نشده است. تمرین‌های بعدی در همین فصل و بر اساس دسته‌های ۷۰ موضوعی افزوده می‌شوند.</div>
+<div id="practice-list" class="practice-list" aria-live="polite"></div>
+</section>
 <section class="topic appendix-topic" id="apA">
   <span class="tnum">پیوست الف</span>
   <h2>واژه‌نامه جامع اصطلاحات CCTV و شبکه</h2>
@@ -14729,5 +14743,33 @@ var oldDori=ppm>=250?'Identification (شناسایی)':ppm>=125?'Recognition (ت
 var current2025=ppm>=1500?'Scrutinize':ppm>=500?'Validate':ppm>=250?'Characterize':ppm>=125?'Perceive':ppm>=80?'Discern':ppm>=40?'Outline':ppm>=20?'Overview':'کمتر از Overview';
 o.innerHTML='عرض صحنه: <b>'+fa(Math.round(w*10)/10)+' متر</b><br>تراکم پیکسل: <b>'+fa(Math.round(ppm))+' PPM</b><br>مدل کلاسیک DORI (۲۰۱۴): <b>'+oldDori+'</b><br>مدل IEC 62676-4:2025: <b>'+current2025+'</b><br><small>این برآورد هندسی به‌تنهایی کیفیت یا شناسایی واقعی را تضمین نمی‌کند؛ نور، لنز، زاویه، حرکت، فشرده‌سازی و نمایشگر هم اثر دارند.</small>'});})();</script>
 
+<script>
+(function(){
+'use strict';
+var KEY='cctvAcademyPractice.v1',tasks=[
+{id:'p364-bnc',title:'اتصال BNC و فیش تغذیه DC',source:'نمونهٔ مهارتی · اتصال تصویر و تغذیه',level:'مبتدی',type:'single',question:'برای اتصال دوربین آنالوگ با خروجی کواکسیال به DVR، کدام مسیر درست است؟',options:['خروجی تصویر ← کابل کواکسیال و BNC سالم ← ورودی BNC DVR؛ تغذیه از ورودی DC با قطبیت صحیح','خروجی تصویر ← فیش DC ← ورودی LAN','خروجی تصویر ← RJ45 بدون مبدل ← HDMI','اتصال مستقیم مغزی کابل به بدنه DVR'],answer:0,why:'BNC مسیر سیگنال ویدئویی روی کابل کواکسیال است. فیش DC مسیر جداگانه تغذیه است و باید با ولتاژ و قطبیت مجاز دوربین تطبیق داشته باشد.',wrong:'یکی‌گرفتن مسیر تصویر و تغذیه یا حذف کانکتور مناسب خطای رایج است.',safety:'پیش از سیم‌کشی، منبع را جدا و ولتاژ و قطبیت درج‌شده روی دوربین را بررسی کن.'},
+{id:'p364-rj45',title:'ترتیب مراحل پانچ سوکت RJ45',source:'نمونهٔ مهارتی · کابل شبکه',level:'متوسط',type:'order',question:'مراحل آماده‌سازی و پرس سوکت RJ45 را به ترتیب درست انتخاب کن.',options:['آزمون کابل با Cable Tester','برداشتن روکش بیرونی بدون آسیب به عایق رشته‌ها','مرتب‌کردن رشته‌ها بر اساس T568A یا T568B انتخاب‌شده','صاف‌کردن و کوتاه‌کردن هم‌اندازه رشته‌ها','واردکردن رشته‌ها تا انتهای سوکت و کنترل ترتیب','پرس سوکت با آچار مناسب'],answer:[1,2,3,4,5,0],why:'ابتدا روکش برداشته می‌شود؛ سپس رشته‌ها مرتب، هم‌اندازه و تا انتهای سوکت وارد می‌شوند. پس از پرس، کابل باید تست شود.',wrong:'پرس پیش از کنترل ترتیب رشته‌ها یا حذف تست نهایی، خطای رایج است.',safety:'هنگام استفاده از تیغه و آچار سوکت‌زن، دست را از مسیر تیغه دور نگه دار.'},
+{id:'p364-camera',title:'انتخاب دوربین برای ورودی دارای نور پس‌زمینه',source:'نمونهٔ مهارتی · انتخاب تجهیزات',level:'متوسط',type:'single',question:'در ورودی فروشگاه، بیرون بسیار روشن و داخل تاریک است. برای حفظ جزئیات چهره در اختلاف نور شدید، کدام قابلیت اولویت دارد؟',options:['True WDR متناسب با صحنه','افزایش دیجیتال زوم بدون تغییر محل نصب','افزایش FPS به بیشترین مقدار','فعال‌کردن HLC برای حذف تمام نور محیط'],answer:0,why:'WDR برای مدیریت اختلاف شدید روشنایی در بخش‌های مختلف تصویر طراحی شده است. انتخاب نهایی باید با تصویر آزمایشی، زاویه نصب و هدف تشخیص بررسی شود.',wrong:'FPS و زوم دیجیتال جایگزین مدیریت نور پس‌زمینه نیستند. HLC بیشتر برای منابع نور نقطه‌ای شدید کاربرد دارد.'},
+{id:'p364-poe',title:'محاسبه بودجه PoE',source:'موضوع ۲۸ · نمونهٔ محاسباتی',level:'متوسط',type:'numeric',question:'هشت دوربین هرکدام حداکثر ۱۲ وات مصرف دارند. بودجه اعلام‌شده سوئیچ ۱۲۰ وات است. مجموع توان موردنیاز چند وات است؟',unit:'وات',answer:96,tolerance:0,why:'۸ × ۱۲ = ۹۶ وات. از نظر جمع توان، ۲۴ وات حاشیه باقی می‌ماند؛ اما محدودیت هر پورت، کلاس PoE، توان راه‌اندازی و مشخصات سازنده نیز باید بررسی شود.',wrong:'فقط جمع توان کافی نیست؛ بودجه کل و محدودیت هر پورت را هم بررسی کن.'},
+{id:'p364-noimage',title:'عیب‌یابی: Ping موفق است اما تصویر نیست',source:'موضوع ۱۵ · نمونهٔ عیب‌یابی',level:'پیشرفته',type:'single',question:'دوربین IP روشن است و Ping پاسخ می‌دهد، اما در NVR تصویر وجود ندارد. بهترین گام بعدی کدام است؟',options:['ورود به رابط وب یا ابزار سازنده و بررسی تصویر زنده؛ سپس بررسی حساب، پروتکل، کدک و ظرفیت کانال NVR','تعویض فوری همه کابل‌ها','تغییر تصادفی IP و Gateway','افزایش توان PoE بدون اندازه‌گیری'],answer:0,why:'Ping فقط پاسخ‌گویی شبکه را نشان می‌دهد و سلامت سرویس ویدئو را ثابت نمی‌کند. ابتدا تصویر را روی خود دوربین بررسی کن؛ سپس اعتبارنامه، ONVIF/RTSP، کدک و ظرفیت NVR را کنترل کن.',wrong:'تعویض کابل یا تغییر IP بدون شواهد، عیب‌یابی را طولانی می‌کند.'}
+];
+var root=document.getElementById('practice-list');if(!root)return;
+var state={answered:{}};try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||state;if(!state.answered)state.answered={}}catch(_){}
+function fa(v){return String(v).replace(/\d/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'[+d]})}
+function node(tag,cls,txt){var n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=txt;return n}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(_){}}
+function update(){var keys=Object.keys(state.answered),done=keys.length,correct=keys.filter(function(k){return state.answered[k]===true}).length;document.getElementById('practice-done').textContent=fa(done);document.getElementById('practice-score').textContent=fa(done?Math.round(correct/done*100):0)+'٪';document.getElementById('practice-progress-bar').style.width=(done/tasks.length*100)+'%'}
+function show(card,t,ok){var f=card.querySelector('.practice-feedback');f.className='practice-feedback show '+(ok?'ok':'no');f.textContent=(ok?'✓ درست است. ':'✗ پاسخ درست را بررسی کن. ')+t.why+(t.wrong?' خطای رایج: '+t.wrong:'');if(t.safety)f.appendChild(node('div','practice-safety','ایمنی: '+t.safety))}
+function finish(card,t,ok){if(card.dataset.done==='1')return;card.dataset.done='1';state.answered[t.id]=!!ok;save();card.querySelectorAll('button,input').forEach(function(x){x.disabled=true});show(card,t,ok);update()}
+function render(t){
+ var c=node('article','practice-card');c.dataset.task=t.id;c.appendChild(node('h3','',t.title));c.appendChild(node('div','practice-meta',t.source+' · سطح '+t.level));c.appendChild(node('div','practice-question',t.question));var a=node('div','practice-options');c.appendChild(a);
+ if(t.type==='single'){t.options.forEach(function(v,i){var b=node('button','practice-option',v);b.type='button';b.onclick=function(){a.querySelectorAll('button').forEach(function(x){x.classList.remove('selected')});b.classList.add('selected');c.dataset.choice=String(i);check.disabled=false};a.appendChild(b)});var row=node('div','practice-actions'),check=node('button','practice-check','بررسی پاسخ');check.type='button';check.disabled=true;check.onclick=function(){var n=Number(c.dataset.choice);a.querySelectorAll('button').forEach(function(b,i){if(i===t.answer)b.classList.add('correct');else if(i===n)b.classList.add('incorrect')});finish(c,t,n===t.answer)};row.appendChild(check);c.appendChild(row)}
+ if(t.type==='order'){var chosen=[],status=node('div','practice-meta','ترتیب انتخاب‌شده: هنوز انتخابی ثبت نشده');c.appendChild(status);t.options.forEach(function(v,i){var b=node('button','practice-option',v);b.type='button';b.onclick=function(){if(chosen.indexOf(i)>=0)return;chosen.push(i);b.classList.add('selected');b.textContent=fa(chosen.length)+' · '+v;status.textContent='ترتیب انتخاب‌شده: '+chosen.map(function(x){return fa(x+1)}).join(' ← ');check.disabled=chosen.length!==t.options.length};a.appendChild(b)});var row=node('div','practice-actions'),check=node('button','practice-check','بررسی ترتیب');check.type='button';check.disabled=true;check.onclick=function(){finish(c,t,chosen.every(function(v,i){return v===t.answer[i]}))};row.appendChild(check);c.appendChild(row)}
+ if(t.type==='numeric'){var input=node('input','practice-input');input.type='number';input.inputMode='decimal';input.placeholder='عدد را وارد کن';input.setAttribute('aria-label','پاسخ عددی');a.appendChild(input);a.appendChild(node('span','',' '+t.unit));var row=node('div','practice-actions'),check=node('button','practice-check','بررسی محاسبه');check.type='button';check.onclick=function(){var n=Number(input.value);finish(c,t,input.value.trim()!==''&&Number.isFinite(n)&&Math.abs(n-t.answer)<=(t.tolerance||0))};row.appendChild(check);c.appendChild(row)}
+ var f=node('div','practice-feedback');f.setAttribute('aria-live','polite');c.appendChild(f);if(state.answered[t.id]!==undefined){c.dataset.done='1';c.querySelectorAll('button,input').forEach(function(x){x.disabled=true});show(c,t,state.answered[t.id])}return c
+}
+tasks.forEach(function(t){root.appendChild(render(t))});document.getElementById('practice-total').textContent=fa(tasks.length);update();
+})();
+</script>
 </body>
 </html>
