@@ -43,6 +43,6 @@ assert.ok(html.includes('id="t364"'), 'Practical chapter 24 must exist');
 assert.ok(html.includes('id="practice-list"'), 'Practical quiz container must exist');
 assert.ok(html.includes('cctvAcademyPractice.v1'), 'Separate practice progress key must exist');
 const practiceIds = [...html.matchAll(/id:'(p364-[a-z0-9-]+)'/g)].map(m => m[1]);
-assert.equal(practiceIds.length, 47, 'Expected 47 practical exercises across the first 140 topics');
+assert.equal(practiceIds.length, 68, 'Expected 68 practical exercises across the first 210 topics');
 assert.equal(new Set(practiceIds).size, practiceIds.length, 'Practical exercise IDs must be unique');
 console.log(`Static audit passed: ${topicIds.length} topics, ${ids.length} HTML IDs, ${hashes.length} local links, ${exercises.length} exercises.`);
