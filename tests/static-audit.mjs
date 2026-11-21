@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 
 // Keep topic sections and sidebar navigation synchronized.
-const topicIds = [...html.matchAll(/<section\b[^>]*\bclass=["'][^"']*\btopic\b[^"']*["'][^>]*\bid=["']([^"']+)["'][^>]*>/gi)].map(m => m[1]);
+const topicIds = [...html.matchAll(/<section\b[^>]*\bclass=["']topic["'][^>]*\bid=["']([^"']+)["'][^>]*>/gi)].map(m => m[1]);
 const navMarkup = html.match(/<nav\b[^>]*\bid=["']sb-nav["'][^>]*>([\s\S]*?)<\/nav>/i)?.[1] ?? '';
 const navTopicIds = [...navMarkup.matchAll(/<a\b[^>]*\bhref=["']#(t\d+)["'][^>]*>/gi)].map(m => m[1]);
 assert.equal(topicIds.length, 379, 'Expected 379 educational topics');
