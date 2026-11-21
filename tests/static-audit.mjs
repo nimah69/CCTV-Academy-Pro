@@ -3,11 +3,11 @@ import { readFileSync } from 'node:fs';
 
 const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
 
-// Topic sections and sidebar navigation must stay in sync.
-const topicIds = [...html.matchAll(/<section\b[^>]*\bclass=["']topic["'][^>]*\bid=["']([^"']+)["'][^>]*>/gi)].map(m => m[1]);
+// Keep topic sections and sidebar navigation synchronized.
+const topicIds = [...html.matchAll(/<section\b[^>]*\bclass=["'][^"']*\btopic\b[^"']*["'][^>]*\bid=["']([^"']+)["'][^>]*>/gi)].map(m => m[1]);
 const navMarkup = html.match(/<nav\b[^>]*\bid=["']sb-nav["'][^>]*>([\s\S]*?)<\/nav>/i)?.[1] ?? '';
 const navTopicIds = [...navMarkup.matchAll(/<a\b[^>]*\bhref=["']#(t\d+)["'][^>]*>/gi)].map(m => m[1]);
-assert.equal(topicIds.length, 364, 'Expected 364 topic sections including practical chapter 24');
+assert.equal(topicIds.length, 379, 'Expected 379 educational topics');
 assert.equal(navTopicIds.length, topicIds.length, 'Every topic must have one sidebar entry');
 assert.deepEqual([...navTopicIds].sort(), [...topicIds].sort(), 'Sidebar and topic IDs must match');
 
@@ -27,8 +27,8 @@ assert.deepEqual(missing, [], 'Broken internal hash links found');
 assert.match(html, /<a\b[^>]*class=["']skip["'][^>]*href=["']#academy-content["']/i);
 assert.match(html, /skipLink\.addEventListener\(['"]click['"],\s*function\(e\)\s*\{\s*e\.preventDefault\(\);\s*mainContent\.focus\(\);/);
 
-// Each exercise block must contain four options and exactly one correct answer.
-const exercises = [...html.matchAll(/<div\b[^>]*class=["']exercise["'][^>]*>[\s\S]*?(?=<div\b[^>]*class=["']exercise["']|<\/section>)/gi)].map(m => m[0]);
+// Each embedded exercise block must contain four options and one correct answer.
+const exercises = [...html.matchAll(/<div\b[^>]*class=["'][^"']*\bexercise\b[^"']*["'][^>]*>[\s\S]*?(?=<div\b[^"']*class=["'][^"']*\bexercise\b[^"']*["']|<\/section>)/gi)].map(m => m[0]);
 assert.ok(exercises.length > 0, 'No exercises found');
 for (let i = 0; i < exercises.length; i++) {
   const options = [...exercises[i].matchAll(/class=["'][^"']*\bopt\b[^"']*["']/gi)].length;
@@ -39,22 +39,39 @@ for (let i = 0; i < exercises.length; i++) {
 
 assert.match(html, /id=["']academy-count["']/);
 assert.match(html, /topicTotal=nav\.querySelectorAll\('a\[href\^="#t"\]'\)\.length/);
-assert.ok(html.includes('id="t364"'), 'Practical chapter 24 must exist');
-assert.ok(html.includes('id="practice-list"'), 'Practical quiz container must exist');
-assert.ok(html.includes('cctvAcademyPractice.v1'), 'Separate practice progress key must exist');
-const practiceIds = [...html.matchAll(/id:'(p364-[a-z0-9-]+)'/g)].map(m => m[1]);
-assert.equal(practiceIds.length, 110, 'Expected 123 practical exercises across the first 363 topics');
-assert.equal(new Set(practiceIds).size, practiceIds.length, 'Practical exercise IDs must be unique');
+assert.ok(html.includes('id="t379"'), 'Latest topic must exist');
+assert.ok(html.includes('id="pq-list"'), 'Practical quiz container must exist');
+assert.ok(html.includes('cctvAcademyPractice.v1'), 'Practical progress key must exist');
 
-// Check balanced answer positions for all single-choice practical exercises.
-const practiceArray = html.match(/var KEY='cctvAcademyPractice\.v1',tasks=\[([\s\S]*?)\n\];/)?.[1] ?? '';
-const taskBlocks = [...practiceArray.matchAll(/\{id:'p364-[^']+'[\s\S]*?(?=\n\{id:'p364-|\s*$)/g)].map(m => m[0]);
-const answerCounts = [0, 0, 0, 0];
-for (const task of taskBlocks) {
-  if (!/type:'single'/.test(task)) continue;
-  const answer = task.match(/answer:(\d+)/)?.[1];
-  assert.ok(answer !== undefined, 'Single-choice task must have a numeric answer');
-  answerCounts[Number(answer)]++;
+// Validate the current structured practical quiz data, rather than obsolete p364 IDs.
+const dataStart = html.indexOf('var DT=');
+const dataEnd = html.indexOf('}},K=', dataStart);
+assert.ok(dataStart >= 0 && dataEnd > dataStart, 'Structured practical data must be present');
+const practicalData = JSON.parse(html.slice(dataStart + 7, dataEnd + 2));
+assert.equal(practicalData.items.length, 35, 'Expected 35 structured practical tasks');
+const practicalIds = practicalData.items.map(item => item.id);
+assert.equal(new Set(practicalIds).size, practicalIds.length, 'Practical task IDs must be unique');
+for (const item of practicalData.items) {
+  assert.ok(item.id && item.q && item.w && item.x, 'Each practical task needs an ID, question and feedback');
+  if (item.y === 'single') {
+    assert.equal(item.o.length, 4, `${item.id} must have four options`);
+    assert.ok(Number.isInteger(item.a) && item.a >= 0 && item.a < item.o.length, `${item.id} has an invalid answer index`);
+  } else if (item.y === 'multi') {
+    assert.equal(item.o.length, 5, `${item.id} must have five options`);
+    assert.ok(Array.isArray(item.a) && item.a.length > 0 && item.a.every(a => Number.isInteger(a) && a >= 0 && a < item.o.length), `${item.id} has invalid multi-select answers`);
+  } else if (item.y === 'numeric') {
+    assert.equal(typeof item.a, 'number', `${item.id} must have a numeric answer`);
+  } else if (item.y === 'order') {
+    assert.equal(item.o.length, 5, `${item.id} must have five ordering items`);
+    assert.ok(Array.isArray(item.a) && item.a.length === item.o.length, `${item.id} has an invalid ordering answer`);
+  } else {
+    assert.fail(`${item.id} has an unsupported task type: ${item.y}`);
+  }
 }
-assert.deepEqual(answerCounts, [29, 28, 29, 28], 'Single-choice answers must remain balanced');
-console.log(`Static audit passed: ${topicIds.length} topics, ${ids.length} HTML IDs, ${hashes.length} local links, ${exercises.length} exercises.`);
+
+// The field-secrets first revision must contain exactly 100 additional numbered tips.
+const fieldTipsBlock = html.match(/<div class=["']field-100-tips["']>([\s\S]*?)<\/div>\s*<h3[^>]*>منابع بررسی‌شده/i)?.[1] ?? '';
+const fieldTipCount = [...fieldTipsBlock.matchAll(/<li>\d+\./g)].length;
+assert.equal(fieldTipCount, 100, 'Field-secrets revision must contain exactly 100 numbered tips');
+
+console.log(`Static audit passed: ${topicIds.length} topics, ${ids.length} HTML IDs, ${hashes.length} local links, ${exercises.length} exercises, ${practicalData.items.length} practical tasks, ${fieldTipCount} field tips.`);
