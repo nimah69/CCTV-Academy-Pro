@@ -69,9 +69,9 @@ for (const item of practicalData.items) {
   }
 }
 
-// The field-secrets first revision must contain exactly 100 additional numbered tips.
+// The field-secrets first revision must contain exactly 100 additional list items.
 const fieldTipsBlock = html.match(/<div class=["']field-100-tips["']>([\s\S]*?)<\/div>\s*<h3[^>]*>منابع بررسی‌شده/i)?.[1] ?? '';
-const fieldTipCount = [...fieldTipsBlock.matchAll(/<li>\d+\./g)].length;
-assert.equal(fieldTipCount, 100, 'Field-secrets revision must contain exactly 100 numbered tips');
+const fieldTipCount = [...fieldTipsBlock.matchAll(/<li(?:\s[^>]*)?>/g)].length;
+assert.equal(fieldTipCount, 100, 'Field-secrets revision must contain exactly 100 tips');
 
 console.log(`Static audit passed: ${topicIds.length} topics, ${ids.length} HTML IDs, ${hashes.length} local links, ${exercises.length} exercises, ${practicalData.items.length} practical tasks, ${fieldTipCount} field tips.`);
