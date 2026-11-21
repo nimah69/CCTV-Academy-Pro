@@ -69,9 +69,11 @@ for (const item of practicalData.items) {
   }
 }
 
-// The field-secrets first revision must contain exactly 100 additional list items.
-const fieldTipsBlock = html.match(/<div class=["']field-100-tips["']>([\s\S]*?)<\/div>\s*<h3[^>]*>منابع بررسی‌شده/i)?.[1] ?? '';
-const fieldTipCount = [...fieldTipsBlock.matchAll(/<li(?:\s[^>]*)?>/g)].length;
-assert.equal(fieldTipCount, 100, 'Field-secrets revision must contain exactly 100 tips');
+// The rebuilt field-challenge appendix must contain exactly 100 challenge cards.
+const fieldChallengeBlock = html.match(/<div class=["']field-challenge-bank["']>([\s\S]*?)<\/section>/i)?.[1] ?? '';
+const fieldChallengeCount = [...fieldChallengeBlock.matchAll(/<article class=["']field-challenge["']/gi)].length;
+assert.equal(fieldChallengeCount, 100, 'Field-challenge appendix must contain exactly 100 cases');
+assert.match(html, /۱۰۰ چالش میدانی و راه‌حل در CCTV و شبکه/);
+assert.doesNotMatch(fieldChallengeBlock, /نکته تکمیلی|نکات قبلی این پیوست/i, 'Old tips section must be removed');
 
-console.log(`Static audit passed: ${topicIds.length} topics, ${ids.length} HTML IDs, ${hashes.length} local links, ${exercises.length} exercises, ${practicalData.items.length} practical tasks, ${fieldTipCount} field tips.`);
+console.log(`Static audit passed: ${topicIds.length} topics, ${ids.length} HTML IDs, ${hashes.length} local links, ${exercises.length} exercises, ${practicalData.items.length} practical tasks, ${fieldChallengeCount} field challenges.`);
